@@ -1,0 +1,5 @@
+Скачать дамп ruwiki с сайта https://dumps.wikimedia.org/wikidatawiki/20180501/
+
+(около 7 файлов в формате xml, запакованные в bz2, например, ruwiki-20180501-pages-articles1.xml-p4p311181.bz2)
+
+распаковать их в "src\test\resources\wiki"

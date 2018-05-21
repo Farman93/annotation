@@ -22,8 +22,21 @@ public class Annotator {
         }
     }
 
+    /**
+     * Метод выполняющий сопоставление статей из списков queryString и not_tokenized
+     *
+     * @param text - текст для аннотирования (в токенизированном виде, токены соединены пробелами)
+     *
+     * @param titles - названия статей, которыми аннотируется текст
+     *
+     * @param definitionsTokenized - статьи, которыми аннотируется текст (в токенизированном виде, токены соединены пробелами)
+     *
+     * @return список ссылок на статьи с указанием номера слова в исходном токенизированном тексте
+     * */
+
     public static List<Data> annotate(String text, List<String> titles, List<String> definitionsTokenized) {
-        return annotate(text, titles, definitionsTokenized, "", new HashMap<>(), -0.1f, 1f, 20, 35, 0, 1f, 0.01f, 150, 0.99f);
+        return annotate(text, titles, definitionsTokenized, "", new HashMap<>(), -0.1f, 1f, 20,
+                35, 0, 1f, 0.01f, 150, 0.99f);
     }
 
     public static List<Data> annotate(String text, List<String> titles, List<String> definitionsTokenized, String currentTitle,

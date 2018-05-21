@@ -5,7 +5,6 @@ import com.github.stagirs.lingvo.morpho.MorphoAnalyst;
 import java.util.*;
 
 public class Mapper {
-    static List<String> titlesRuTokenized = new ArrayList<>();
 
     private static final String STOP_SYMBOLS[] = {".", ",", "!", "?", ":", ";", "-", "\\", "/", "*", "(", ")", "+", "@",
             "#", "$", "%", "^", "&", "=", "'", "\"", "[", "]", "{", "}", "|"};
@@ -14,15 +13,17 @@ public class Mapper {
             "бы", "что", "кто", "он", "она"};
 
 
-    public static List<Integer> map(List<String> queryString, List<String> not_tokenized, List<String> titlesRu, List<String> titlesEn, float part) {
+    /**
+     * Метод выполняющий сопоставление статей из списков queryString и not_tokenized
+     *
+     * @param part числовой параметр от 0 до 1, позволяющий варьировать точность и полноту сопоставления
+     *
+     * @return для каждой статьи из queryString ставит в соответствие id статьи из not_tokenized,
+     *      если такое соответствие есть, -1 - иначе
+    * */
+    public static List<Integer> map(List<String> queryString, List<String> not_tokenized, float part) {
 
         tokenize(not_tokenized);
-        Set<String> titles = new HashSet<>();
-        for (int i = 0; i < titlesEn.size(); i++)
-            if (!not_tokenized.get(i).contains("#REDIRECT"))
-                titles.add(getTokenized2(titlesEn.get(i).toLowerCase()));
-        for (String str: titlesRu)
-            titlesRuTokenized.add(getTokenized2(str));
 
         List<Integer> scores;
         List<Float> points = new ArrayList<>();

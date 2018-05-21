@@ -34,7 +34,6 @@ public class AnnotationTest {
             for (final File fileEntry : folder.listFiles()) {
                 File file = new File(AnnotationTest.class.getClassLoader().getResource("wiki").getPath() + "/" + fileEntry.getName());
                 parser.parse(file, pageHandler);
-                break;
             }
             int linksCount = 0;
             pages = pageHandler.getPages();
