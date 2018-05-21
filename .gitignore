@@ -1,0 +1,10 @@
+dict.opcorpora.xml.zip
+/target/*
+/.idea/*
+/.git/*
+rank.iml
+/lib/*
+/hs_err_pid11924.log
+/hs_err_pid15248.log
+/replay_pid11924.log
+/replay_pid15248.log
